@@ -9,17 +9,19 @@
 
     <div ng-app="playAngular", ng-controller="playController">
       <p>
-        <label>First Name</label> : <input type="text" ng-model="firstName">
-        <label>Last Name</label> : <input type="text" ng-model="lastName">
+        <label>First Name</label> : <input type="text" ng-model="person.firstName">
+        <label>Last Name</label> : <input type="text" ng-model="person.lastName">
       </p>
-      <h1>Hello <span ng-bind="firstName"></span> <span ng-bind="lastName"></span></h1>
+      <h1>Hello <span ng-bind="person.firstName"></span> <span ng-bind="person.lastName"></span></h1>
     </div>
 
     <script>
       var app = angular.module('playAngular', []);
       app.controller('playController', function($scope) {
-        $scope.firstName = "John";
-        $scope.lastName  = "Doe"
+        $scope.person = {
+          firstName: "John",
+          lastName:  "Doe"
+        };
       });
     </script>
   </body>
