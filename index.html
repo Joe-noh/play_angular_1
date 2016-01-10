@@ -17,10 +17,13 @@
       <ul>
         <li ng-repeat="x in numbers">{{x}}</li>
       </ul>
+
+      <my-directive></my-directive>
     </div>
 
     <script>
       var app = angular.module('playAngular', []);
+
       app.controller('playController', function($scope) {
         $scope.person = {
           firstName: "John",
@@ -28,6 +31,13 @@
         };
 
         $scope.numbers = [1, 2, 4, 8, 16];
+      });
+
+      app.directive("myDirective", function() {
+        return {
+          restrict: "E",
+          template: "this is my first directive!"
+        };
       });
     </script>
   </body>
