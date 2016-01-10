@@ -8,14 +8,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
 
     <div ng-app="playAngular", ng-controller="playController">
-      <p>Name : <input type="text" ng-model="name"></p>
-      <h1>Hello <span ng-bind="name"></span></h1>
+      <p>
+        <label>First Name</label> : <input type="text" ng-model="firstName">
+        <label>Last Name</label> : <input type="text" ng-model="lastName">
+      </p>
+      <h1>Hello <span ng-bind="firstName"></span> <span ng-bind="lastName"></span></h1>
     </div>
 
     <script>
       var app = angular.module('playAngular', []);
       app.controller('playController', function($scope) {
-        $scope.name = "";
+        $scope.firstName = "John";
+        $scope.lastName  = "Doe"
       });
     </script>
   </body>
