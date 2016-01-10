@@ -13,6 +13,10 @@
         <label>Last Name</label> : <input type="text" ng-model="person.lastName">
       </p>
       <h1>Hello <span ng-bind="person.firstName"></span> <span ng-bind="person.lastName"></span></h1>
+
+      <ul>
+        <li ng-repeat="x in numbers">{{x}}</li>
+      </ul>
     </div>
 
     <script>
@@ -22,6 +26,8 @@
           firstName: "John",
           lastName:  "Doe"
         };
+
+        $scope.numbers = [1, 2, 4, 8, 16];
       });
     </script>
   </body>
