@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Play Angluar</title>
+
+    <style media="screen">
+      input.ng-invalid.ng-touched {
+        border-color: red;
+      }
+    </style>
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
@@ -19,6 +25,21 @@
       </ul>
 
       <my-directive></my-directive>
+
+      <hr>
+
+      <form name="emailForm">
+        <label>Email</label> : <input type="email" name="emailInput" ng-model="person.email" required>
+        <span ng-show="emailForm.emailInput.$touched && emailForm.emailInput.$error.email">
+          Invalid e-mail address
+        </span>
+
+        <ul>
+          <li>valid: {{emailForm.emailInput.$valid}}</li>
+          <li>dirty: {{emailForm.emailInput.$dirty}}</li>
+          <li>touched: {{emailForm.emailInput.$touched}}</li>
+        </ul>
+      </form>
     </div>
 
     <script>
