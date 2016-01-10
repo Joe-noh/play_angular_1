@@ -18,7 +18,7 @@
         <label>First Name</label> : <input type="text" ng-model="person.firstName">
         <label>Last Name</label> : <input type="text" ng-model="person.lastName">
       </p>
-      <h1>Hello <span ng-bind="person.firstName"></span> <span ng-bind="person.lastName"></span></h1>
+      <h1>Hello <span ng-bind="person.fullName()"></span></h1>
 
       <ul>
         <li ng-repeat="x in numbers">{{x}}</li>
@@ -51,7 +51,10 @@
       app.controller('playController', function($scope) {
         $scope.person = {
           firstName: "John",
-          lastName:  "Doe"
+          lastName:  "Doe",
+          fullName: function() {
+            return $scope.person.firstName + " " + $scope.person.lastName;
+          }
         };
 
         $scope.numbers = [1, 2, 4, 8, 16];
