@@ -1,0 +1,19 @@
+{
+  "name": "play_angular_1",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joe-noh/play_angular_1.git"
+  },
+  "author": "Joe Honzawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joe-noh/play_angular_1/issues"
+  },
+  "homepage": "https://github.com/Joe-noh/play_angular_1#readme"
+}
