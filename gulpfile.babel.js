@@ -3,6 +3,7 @@ import source from 'vinyl-source-stream';
 import glob from 'glob';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import babelify from 'babelify';
 
 let gulpPlugins = gulpLoadPlugins({
   pattern: ['gulp-*', 'gulp.*'],
@@ -17,6 +18,7 @@ let paths = {
 
 gulp.task('browserify', () => {
   browserify(`${paths.src}app.js`, {debug: true})
+  .transform(babelify)
   .bundle()
   .pipe(source('app.js'))
   .pipe(gulp.dest(paths.dist))
