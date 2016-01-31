@@ -1,13 +1,15 @@
-let playController = ($scope) => {
-  $scope.person = {
-    firstName: "John",
-    lastName:  "Doe",
-    fullName: () => {
-      return `${$scope.person.firstName} ${$scope.person.lastName}`;
-    }
-  };
+class PlayController {
+  constructor() {
+    this.person = {
+      firstName: "John",
+      lastName:  "Doe",
+      fullName: () => {
+        return `${this.person.firstName} ${this.person.lastName}`;
+      }
+    };
 
-  $scope.numbers = [1, 2, 4, 8, 16];
-};
+    this.numbers = [1, 2, 4, 8, 16];
+  }
+}
 
-export default playController;
+export default PlayController;
