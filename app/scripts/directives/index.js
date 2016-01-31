@@ -1,3 +1,6 @@
-var app = require('angular').module('playAngular');
+import angular from 'angular';
+import myDirective from './my_directive';
 
-app.directive('myDirective', require('./my_directive'));
+let app = angular.module('playAngular');
+
+app.directive('myDirective', myDirective);

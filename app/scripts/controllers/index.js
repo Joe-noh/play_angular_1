@@ -1,3 +1,6 @@
-var app = require('angular').module('playAngular');
+import angular from 'angular';
+import playController from './play';
 
-app.controller('PlayController', require('./play'));
+let app = angular.module('playAngular');
+
+app.controller('PlayController', playController);

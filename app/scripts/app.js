@@ -1,12 +1,12 @@
-var angular = require('angular');
-require('angular-route');
+import angular from 'angular';
+import _ngRoute from 'angular-route';
 
-var app = angular.module('playAngular', ['ngRoute']);
+let app = angular.module('playAngular', ['ngRoute']);
 
 require('./controllers');
 require('./directives');
 
-app.config(function($routeProvider) {
+app.config(($routeProvider) => {
   $routeProvider.when('/', {
     templateUrl: 'views/play.html',
     controller: 'PlayController',
