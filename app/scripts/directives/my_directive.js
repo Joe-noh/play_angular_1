@@ -1,8 +1,8 @@
-var myDirective = function() {
+let myDirective = () => {
   return {
     restrict: "E",
     template: "this is my first directive!"
   };
 };
 
-module.exports = myDirective;
+export default myDirective;
