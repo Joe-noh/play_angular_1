@@ -11,6 +11,11 @@
 
   <my-directive></my-directive>
 
+  <div ng-repeat="note in vm.notes">
+    <h4>{{note.title}}</h4>
+    <p>{{note.body}}</p>
+  </div>
+
   <hr>
 
   <form name="emailForm">
