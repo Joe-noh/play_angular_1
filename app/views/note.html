@@ -1,0 +1,8 @@
+<div ng-controller="NoteListController as vm">
+  <div ng-repeat="note in vm.notes">
+    <div ng-class={{vm.cssClass(note)}}>
+      <h4>{{note.title}}</h4>
+      <p>{{note.body}}</p>
+    </div>
+  </div>
+</div>

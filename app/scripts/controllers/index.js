@@ -1,6 +1,8 @@
 import angular from 'angular';
-import PlayController from './play';
+import NoteListController from './note_list'
+import NoteController from './note';
 
-let app = angular.module('playAngular');
+let app = angular.module('noteApp');
 
-app.controller('PlayController', PlayController);
+app.controller('NoteListController', NoteListController);
+app.controller('NoteController', NoteController);
