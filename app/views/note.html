@@ -1,4 +1,4 @@
-<div ng-controller="NoteListController as vm">
+<div ng-controller="NoteListController as vm" class="list">
   <div ng-repeat="note in vm.getNotes()">
     <div ng-class={{vm.cssClass(note)}} ng-click="vm.select(note)">
       <h4>{{note.title}}</h4>
@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<div ng-controller="NoteEditController as vm">
+<div ng-controller="NoteEditController as vm" class="display">
   <div ng-show="vm.editMode">
     <form>
       <input ng-model="note.title", type="text"></input>
