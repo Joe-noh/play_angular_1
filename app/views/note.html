@@ -1,8 +1,24 @@
 <div ng-controller="NoteListController as vm">
-  <div ng-repeat="note in vm.notes">
-    <div ng-class={{vm.cssClass(note)}}>
+  <div ng-repeat="note in vm.getNotes()">
+    <div ng-class={{vm.cssClass(note)}} ng-click="vm.select(note)">
       <h4>{{note.title}}</h4>
       <p>{{note.body}}</p>
     </div>
+  </div>
+</div>
+
+<div ng-controller="NoteEditController as vm">
+  <div ng-show="vm.editMode">
+    <form>
+      <input ng-model="note.title", type="text"></input>
+      <textarea ng-model="note.body" rows="8" cols="40"></textarea>
+      <button ng-click="vm.save()">Save</button>
+    </form>
+  </div>
+  <div ng-show="!vm.editMode">
+    <span ng-bind="$parent.note.title"></span>
+    <p ng-bind="$parent.note.body"></p>
+    <button ng-click="vm.create()">New</button>
+    <button ng-click="vm.edit()">Edit</button>
   </div>
 </div>

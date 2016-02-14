@@ -1,6 +1,6 @@
 export default class NoteService {
-  getNotes() {
-    return [
+  constructor() {
+    this.notes = [
       {
         title: "今日の予定",
         body: "買い物に行きます"
@@ -16,6 +16,15 @@ export default class NoteService {
     ];
   }
 
-  constructor() {
+  getNotes() {
+    return this.notes;
+  }
+
+  build() {
+    return {title: '', body: ''};
+  }
+
+  insert(note) {
+    this.notes.push(note);
   }
 };
