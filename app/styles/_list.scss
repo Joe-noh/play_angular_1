@@ -1,0 +1,14 @@
+.list {
+  width: 30%;
+  float: left;
+
+  .list__note {
+    cursor: pointer;
+
+      .list__selected {
+        background-color: #ace;
+      }
+    }
+  }
+}
+
