@@ -1,6 +1,6 @@
 <div ng-controller="NoteListController as vm" class="list">
   <div ng-repeat="note in vm.getNotes()">
-    <div ng-class={{vm.cssClass(note)}} ng-click="vm.select(note)">
+    <div ng-class="vm.cssClass(note)" ng-click="vm.select(note)" class="list__note">
       <h4>{{note.title}}</h4>
       <p>{{note.body}}</p>
     </div>

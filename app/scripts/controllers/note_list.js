@@ -15,9 +15,9 @@ export default class NoteListController {
 
   cssClass(note) {
     if (this.scope.$parent.note == note) {
-      return 'selected';
+      return ['list__selected'];
     } else {
-      return '';
+      return [];
     }
   }
 }
