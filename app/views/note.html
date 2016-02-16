@@ -1,24 +1,23 @@
 <div ng-controller="NoteListController as vm" class="list">
-  <div ng-repeat="note in vm.getNotes()">
-    <div ng-class="vm.cssClass(note)" ng-click="vm.select(note)" class="list__note">
-      <h4>{{note.title}}</h4>
-      <p>{{note.body}}</p>
-    </div>
+  <h1
+    ng-repeat="note in vm.getNotes()"
+    ng-class="vm.cssClass(note)"
+    ng-click="vm.select(note)"
+    class="list__title">{{note.title}}</h1>
   </div>
 </div>
 
 <div ng-controller="NoteEditController as vm" class="display">
-  <div ng-show="vm.editMode">
-    <form>
-      <input ng-model="note.title", type="text"></input>
-      <textarea ng-model="note.body" rows="8" cols="40"></textarea>
-      <button ng-click="vm.save()">Save</button>
-    </form>
-  </div>
-  <div ng-show="!vm.editMode">
-    <span ng-bind="$parent.note.title"></span>
-    <p ng-bind="$parent.note.body"></p>
-    <button ng-click="vm.create()">New</button>
-    <button ng-click="vm.edit()">Edit</button>
+  <form ng-show="vm.editMode" class="display__form">
+    <input ng-model="note.title", type="text" class="display__form__title"></input>
+    <textarea ng-model="note.body" class="display__form__body"></textarea>
+    <button ng-click="vm.save()" class="button">Save</button>
+  </form>
+
+  <div ng-show="!vm.editMode" class="display__show">
+    <span ng-bind="$parent.note.title" class="display__show__title"></span>
+    <p ng-bind="$parent.note.body" class="display__show__body"></p>
+    <button ng-click="vm.create()" class="button">New</button>
+    <button ng-click="vm.edit()" class="button">Edit</button>
   </div>
 </div>

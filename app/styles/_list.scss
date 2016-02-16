@@ -2,9 +2,18 @@
   width: 30%;
   float: left;
 
-  .list__note {
+  .list__title {
     cursor: pointer;
+    font-size: 12pt;
+    margin: 0;
+    padding: 4px;
+    border-bottom: solid 1px #888;
+
+    &:last-child {
+      border-bottom: hidden;
+    }
   }
+
   .list__selected {
     background-color: #ace;
   }

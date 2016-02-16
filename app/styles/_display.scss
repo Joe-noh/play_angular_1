@@ -1,0 +1,63 @@
+.display {
+  width: 68%;
+  height: 100%;
+  margin: 0 1% 0 0;
+  display: block;
+  float: right;
+
+  @mixin text_input {
+    display: block;
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    border: solid 1px #888;
+    border-radius: 3px;
+    font-size: 13pt;
+    padding: 7px;
+  }
+
+  @mixin oneline_input {
+    @include text_input;
+
+    height: 25px;
+  }
+
+  @mixin multiline_input {
+    @include text_input;
+
+    height: 500px;
+  }
+
+  .display__show {
+    height: 100%;
+  }
+
+  .display__show__title {
+    @include oneline_input;
+  }
+
+  .display__show__body {
+    @include multiline_input;
+
+    word-break: break-all;
+    white-space: pre-line;
+  }
+
+  .display__form__title {
+    @include oneline_input;
+  }
+
+  .display__form__body {
+    @include multiline_input;
+  }
+
+  .button {
+    padding: 10px 10px;
+    font-size: 15pt;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #579;
+    color: white;
+  }
+}

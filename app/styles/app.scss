@@ -1,7 +1,10 @@
-@import 'list';
-
-.display {
-  width: 68%;
-  margin-left: 2%;
-  float: right;
+html, body {
+  height: 100%;
 }
+
+.full_height {
+  height: 100%;
+}
+
+@import 'list';
+@import 'display';
