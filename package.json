@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Joe-noh/play_angular_1#readme",
   "dependencies": {
-    "angular": "^1.4.9",
+    "angular": "^1.5.0",
     "angular-route": "^1.4.9"
   },
   "devDependencies": {
