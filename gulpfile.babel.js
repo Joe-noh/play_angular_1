@@ -11,13 +11,14 @@ let gulpPlugins = gulpLoadPlugins({
 });
 
 let paths = {
-  root: './app/',
-  src:  './app/scripts/',
-  dist: './app/dist/'
+  root:    './app/',
+  scripts: './app/scripts/',
+  styles:  './app/styles/',
+  dist:    './app/dist/'
 };
 
 gulp.task('browserify', () => {
-  browserify(`${paths.src}app.js`, {debug: true})
+  browserify(`${paths.scripts}app.js`, {debug: true})
   .transform(babelify)
   .bundle()
   .pipe(source('app.js'))
@@ -25,7 +26,13 @@ gulp.task('browserify', () => {
   .pipe(gulpPlugins.connect.reload());
 });
 
-gulp.task('server', ['browserify'], () => {
+gulp.task('sass', () => {
+  gulp.src(`${paths.styles}app.scss`)
+   .pipe(gulpPlugins.sass().on('error', gulpPlugins.sass.logError))
+   .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('server', ['browserify', 'sass'], () => {
   gulpPlugins.connect.server({
     root: './app',
     livereload: true,
@@ -34,5 +41,6 @@ gulp.task('server', ['browserify'], () => {
 
 gulp.task('watch', () => {
   gulp.start('server');
-  gulp.watch([`${paths.src}**/*.js`], ['browserify']);
+  gulp.watch([`${paths.styles}**/*.scss`], ['sass']);
+  gulp.watch([`${paths.scripts}**/*.js`], ['browserify']);
 });
